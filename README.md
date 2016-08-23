@@ -2,6 +2,10 @@
 
 Simple ActiveRecord auditing.
 
+[![CircleCI](https://circleci.com/gh/newaperio/transcript.svg?style=svg)](https://circleci.com/gh/newaperio/transcript)
+[![Code Climate](https://codeclimate.com/github/newaperio/transcript/badges/gpa.svg)](https://codeclimate.com/github/newaperio/transcript)
+[![Test Coverage](https://codeclimate.com/github/newaperio/transcript/badges/coverage.svg)](https://codeclimate.com/github/newaperio/transcript/coverage)
+
 Transcript is a simple audit library. It provides a clean interface for recording changes to a given record, including metadata about the change itself. At its core, Transcript is simply a set of concerns that expose functionality in the controller to create the log and in the model to setup relationships between the data.
 
 Transcript differs from other auditing libraries in two ways. First, it values explicitness, exposing audit log creation near where the action takes place. Secondly, Transcript values simplicity. The core classes are only a few lines each.
