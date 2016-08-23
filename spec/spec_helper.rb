@@ -34,9 +34,11 @@ require "dummy/config/environment"
 require "shoulda-matchers"
 require "factory_girl_rails"
 
-RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
+Dir[File.expand_path("../support/**/*.rb", __FILE__)].sort.each do |file|
+  require_relative file
+end
 
+RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
     expectations.syntax = :expect
@@ -47,18 +49,5 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  # config.example_status_persistence_file_path = "tmp/rspec_examples.txt"
   config.order = :random
-
-  config.include Shoulda::Matchers::ActiveModel, type: :model
-  config.include Shoulda::Matchers::ActiveRecord, type: :model
-
-  ActiveJob::Base.queue_adapter = :test
-end
-
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
-  end
 end
