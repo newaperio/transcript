@@ -1,0 +1,17 @@
+Description:
+  Installs Transcript. Creates a new audit model with the passed model name.
+  Creates a configuration file. Injects the Transcript concerns into
+  ApplicationController and the newly created model.
+
+Example:
+    rails generate transcript audit_entry
+
+    This will create:
+
+        Configuration: config/initializers/transcript.rb
+        Model:         app/models/audit_entry.rb
+
+    This will modify:
+
+        Controller:    app/controllers/application_controller.rb
+        Model:         app/models/audit_entry.rb

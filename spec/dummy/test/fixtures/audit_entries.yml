@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  action: MyString
+  receiver_serialized: MyString
+  receiver: one
+  receiver_type: Receiver
+  actor: one
+  actor_type: Actor
+  changes: 
+
+two:
+  action: MyString
+  receiver_serialized: MyString
+  receiver: two
+  receiver_type: Receiver
+  actor: two
+  actor_type: Actor
+  changes: 
