@@ -1,0 +1,8 @@
+database:
+  override:
+    - bin/setup:
+        pwd:
+          spec/dummy
+test:
+  override:
+    - COVERAGE=true bundle exec rake spec
