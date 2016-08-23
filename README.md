@@ -122,7 +122,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-Now, in any action, make a call to the helper. The method expects an object representing the actor and the object that is being acted upon. You can optionally pass a custom action name as a third argument as symbol representing the verb (e.g. `:create`, `:delete`, or `:export`). If no custom action is provided Transcript will infer from the controller action it's being called in.
+Now, in any action, make a call to the helper. The method expects an object representing the actor and the object that is being acted upon. You can optionally pass a custom action name as a third argument as a string representing the verb (e.g. `create`, `delete`, or `export`). If no custom action is provided Transcript will infer from the controller action it's being called in.
 
 **Implied action:**
 ```ruby
@@ -135,7 +135,7 @@ end
 **Custom action:**
 ```ruby
 def send_password_reset
-  audit_action current_user, @user, :password_reset
+  audit_action current_user, @user, "password_reset"
   # ...
 end
 ```
