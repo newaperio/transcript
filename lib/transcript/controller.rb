@@ -5,7 +5,10 @@ module Transcript
     extend ActiveSupport::Concern
 
     def audit_action(actor, receiver, action = action_name)
-      Transcript::Job.perform_later(actor, receiver, action)
+      Transcript::Job.send(
+        Transcript.configuration.job_method,
+        actor, receiver, action
+      )
     end
   end
 end

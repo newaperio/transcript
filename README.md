@@ -140,6 +140,16 @@ def send_password_reset
 end
 ```
 
+### Background Job
+
+Transcript includes an ActiveJob class to create audit entries in the background. However, it can also be run in synchronous mode where entries are created inline. This is handled with a configuration value, which by default is set to synchronous mode.
+
+```ruby
+Transcript.configure do |config|
+  config.create_mode = :asynchronous # use backgrounding or :synchronous for inline
+end
+```
+
 ## Known Issues
 
 ### UUIDs
