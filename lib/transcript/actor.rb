@@ -7,7 +7,7 @@ module Transcript
     included do
       has_many :audit_entries_by,
         as: :actor,
-        class_name: Transcript.configuration.audit_model
+        class_name: Transcript.configuration.audit_model.to_s
     end
   end
 end

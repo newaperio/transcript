@@ -37,7 +37,7 @@ RSpec.describe Transcript::InstallGenerator, type: :generator do
 
     expect(initializer).to exist
     expect(initializer).to have_correct_syntax
-    expect(initializer).to contain("config.audit_model = AuditLog")
+    expect(initializer).to contain("config.audit_model = 'AuditLog'")
   end
 
   it "includes the controller concern in ApplicationController" do
