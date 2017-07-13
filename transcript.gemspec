@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "shoulda-matchers", "~> 3.1"
   spec.add_development_dependency "simplecov", "~> 0.12"
   spec.add_development_dependency "sqlite3", "~> 1.3"
-  spec.add_runtime_dependency "rails", "~> 5.0"
+  spec.add_runtime_dependency "rails", "~> 5.0.4"
   spec.authors = ["Logan Leger", "NewAperio"]
   spec.description = <<-DESC
 Transcript is a simple audit library. It provides a clean interface for
