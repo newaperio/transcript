@@ -22,14 +22,14 @@ gem 'transcript'
 
 And then execute:
 
-```sh
-$ bundle
+```bash
+bundle
 ```
 
 Next, run the generator to install:
 
-```sh
-$ rails generate transcript:install NAME
+```bash
+rails generate transcript:install NAME
 ```
 
 This generates a Transcript model, which can be called anything, and an initializer, specifying some configuration.
@@ -124,7 +124,8 @@ end
 
 Now, in any action, make a call to the helper. The method expects an object representing the actor and the object that is being acted upon. You can optionally pass a custom action name as a third argument as a string representing the verb (e.g. `create`, `delete`, or `export`). If no custom action is provided Transcript will infer from the controller action it's being called in.
 
-**Implied action:**
+#### Implied action
+
 ```ruby
 def create
   audit_action current_user, @comment
@@ -132,7 +133,8 @@ def create
 end
 ```
 
-**Custom action:**
+#### Custom action
+
 ```ruby
 def send_password_reset
   audit_action current_user, @user, "password_reset"
@@ -173,7 +175,7 @@ end
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/newaperio/transcript. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on [GitHub](https://github.com/newaperio/transcript). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
