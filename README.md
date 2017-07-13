@@ -65,7 +65,7 @@ This interface sets up relationships to the log. To get a list of all the entrie
 The receiver, similar to the actor, can be any individual model, and as many models as required. To add a new receiver, include the concern:
 
 ```ruby
-class Post < ActiveRecord::Post
+class Post < ActiveRecord::Base
   include Transcript::Receiver
 end
 ```
