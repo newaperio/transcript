@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    transcript (0.2.0)
-      rails (~> 5.0.4)
+    transcript (0.2.1)
+      rails (~> 5.0)
 
 GEM
   remote: https://rubygems.org/
