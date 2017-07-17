@@ -5,6 +5,7 @@ class CreateAuditEntries < ActiveRecord::Migration[5.0]
       t.references :actor, polymorphic: true
       t.references :receiver, polymorphic: true
       t.string :receiver_serialized
+      t.string :meta
 
       t.timestamps
     end

@@ -11,6 +11,7 @@ module Transcript
         "actor:references{polymorphic}",
         "receiver:references{polymorphic}",
         "receiver_serialized:jsonb",
+        "meta:jsonb",
       ]
     end
 

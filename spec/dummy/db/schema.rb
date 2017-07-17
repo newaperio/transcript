@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160823152659) do
     t.string   "receiver_type"
     t.integer  "receiver_id"
     t.string   "receiver_serialized"
+    t.string   "meta"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.index ["actor_type", "actor_id"], name: "index_audit_entries_on_actor_type_and_actor_id"

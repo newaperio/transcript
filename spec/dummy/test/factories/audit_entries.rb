@@ -4,6 +4,7 @@ FactoryGirl.define do
     receiver_serialized ""
     receiver nil
     actor nil
+    meta ""
     receiver_changes ""
   end
 end
