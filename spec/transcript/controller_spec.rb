@@ -5,7 +5,8 @@ RSpec.describe Transcript::Controller, type: :controller do
     def edit
       @user = FactoryGirl.create(:user)
       @post = FactoryGirl.create(:post)
-      audit_action @user, @post
+      @meta = "metadata"
+      audit_action @user, @post, @meta
 
       head :ok
     end
@@ -13,7 +14,8 @@ RSpec.describe Transcript::Controller, type: :controller do
     def custom
       @user = FactoryGirl.create(:user)
       @post = FactoryGirl.create(:post)
-      audit_action @user, @post, "custom"
+      @meta = "metadata"
+      audit_action @user, @post, "custom", @meta
 
       head :ok
     end
@@ -26,10 +28,11 @@ RSpec.describe Transcript::Controller, type: :controller do
     get :edit
 
     expect(Transcript::Job).to have_been_enqueued
-                           .with do |actor, receiver, action|
+                           .with do |actor, receiver, action, meta|
       expect(actor).to be_a User
       expect(receiver).to be_a Post
       expect(action).to eq "edit"
+      expect(meta).to eq "metadata"
     end
   end
 
@@ -40,10 +43,11 @@ RSpec.describe Transcript::Controller, type: :controller do
     get :custom
 
     expect(Transcript::Job).to have_been_enqueued
-                           .with do |actor, receiver, action|
+                           .with do |actor, receiver, action, meta|
       expect(actor).to be_a User
       expect(receiver).to be_a Post
       expect(action).to eq "custom"
+      expect(meta).to eq "metadata"
     end
   end
 end

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    transcript (0.2.1)
+    transcript (0.3.0)
       rails (~> 5.0)
 
 GEM

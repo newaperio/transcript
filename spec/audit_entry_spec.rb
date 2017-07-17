@@ -7,6 +7,7 @@ RSpec.describe AuditEntry, type: :model do
     it { is_expected.to have_db_column(:action).of_type(:string)              }
     # TODO This should be :jsonb, which doesn't work with SQLite
     it { is_expected.to have_db_column(:receiver_serialized).of_type(:string) }
+    it { is_expected.to have_db_column(:meta).of_type(:string) }
     it { is_expected.to have_db_column(:receiver_id).of_type(:integer)        }
     it { is_expected.to have_db_column(:receiver_type).of_type(:string)       }
     it { is_expected.to have_db_column(:actor_id).of_type(:integer)           }
